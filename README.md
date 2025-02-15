@@ -1,43 +1,52 @@
-Monitoring Stack for LAMP Server
-This project sets up a monitoring stack using Prometheus, Grafana, and Node Exporter to monitor a LAMP (Linux, Apache, MySQL, PHP) server. The stack collects system-level metrics and visualizes them in real-time using Grafana dashboards.
+# Monitoring Stack for LAMP Server 🚀
 
-Features
-Prometheus: Scrapes and stores metrics from the LAMP server and the Prometheus server itself.
+![GitHub](https://img.shields.io/github/license/your-username/monitoring-stack?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/your-username/monitoring-stack?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/your-username/monitoring-stack?style=flat-square)
 
-Node Exporter: Exposes system-level metrics (CPU, memory, disk, network, etc.) for monitoring.
+This project sets up a **monitoring stack** using **Prometheus**, **Grafana**, and **Node Exporter** to monitor a **LAMP (Linux, Apache, MySQL, PHP)** server. The stack collects system-level metrics and visualizes them in real-time using Grafana dashboards.
 
-Grafana: Provides real-time visualization of metrics using customizable dashboards.
+---
 
-Easy Setup: Includes installation scripts for quick deployment.
+## **Features** ✨
 
-Architecture Overview
-Prometheus Server: 192.168.122.175
+- **Prometheus**: Scrapes and stores metrics from the LAMP server and the Prometheus server itself.
+- **Node Exporter**: Exposes system-level metrics (CPU, memory, disk, network, etc.) for monitoring.
+- **Grafana**: Provides real-time visualization of metrics using customizable dashboards.
+- **Easy Setup**: Includes installation scripts for quick deployment.
 
-Runs Prometheus and Grafana.
+---
 
-Scrapes metrics from itself and the LAMP stack server.
+## **Architecture Overview** 🏗️
 
-LAMP Stack Server: server_ip
+![Architecture Diagram](https://via.placeholder.com/800x400.png?text=Architecture+Diagram)  
+*Replace this placeholder with your actual architecture diagram.*
 
-Runs Node Exporter to expose system metrics.
+1. **Prometheus Server**: `<prometheus-server-ip>`
+   - Runs Prometheus and Grafana.
+   - Scrapes metrics from itself and the LAMP stack server.
 
-Grafana: Visualizes metrics collected by Prometheus.
+2. **LAMP Stack Server**: `<lamp-server-ip>`
+   - Runs Node Exporter to expose system metrics.
 
-Prerequisites
-Two Ubuntu 20.04 servers:
+3. **Grafana**: Visualizes metrics collected by Prometheus.
 
-Prometheus Server: server_ip
+---
 
-LAMP Stack Server: server_ip
+## **Prerequisites** 📋
 
-SSH access to both servers.
+- Two Ubuntu 20.04 servers:
+  - Prometheus Server: `<prometheus-server-ip>`
+  - LAMP Stack Server: `<lamp-server-ip>`
+- SSH access to both servers.
+- Basic knowledge of Linux commands.
 
-Basic knowledge of Linux commands.
+---
 
-Installation
-1. Clone the Repository
-bash
-Copy
+## **Installation** 🛠️
+
+### **1. Clone the Repository**
+```bash
 git clone https://github.com/your-username/monitoring-stack.git
 cd monitoring-stack
 2. Run the Setup Script
@@ -47,18 +56,18 @@ bash
 Copy
 chmod +x scripts/setup_monitoring.sh
 ./scripts/setup_monitoring.sh
-Configuration
+Configuration ⚙️
 Prometheus
 Configuration file: prometheus/prometheus.yml
 
 Scrapes metrics from:
 
-Prometheus Server: server_ip:9100
+Prometheus Server: <prometheus-server-ip>:9100
 
-LAMP Stack Server: server_ip:9100
+LAMP Stack Server: <lamp-server-ip>:9100
 
 Grafana
-Access Grafana at http://server_ip:3000.
+Access Grafana at http://<prometheus-server-ip>:3000.
 
 Default credentials:
 
@@ -69,20 +78,20 @@ Password: admin
 Node Exporter
 Exposes metrics at http://<server-ip>:9100/metrics.
 
-Usage
+Usage 🚀
 Access Prometheus
-Open your browser and go to http://server_ip:9090.
+Open your browser and go to http://<prometheus-server-ip>:9090.
 
 Check the Targets page to ensure both servers are being scraped.
 
 Access Grafana
-Open your browser and go to http://server_ip:3000.
+Open your browser and go to http://<prometheus-server-ip>:3000.
 
 Import the Node Exporter Full dashboard using ID 1860.
 
 Customize the dashboard to visualize metrics from both servers.
 
-Project Structure
+Project Structure 📂
 Copy
 monitoring-stack/
 ├── README.md                   # Project documentation
@@ -101,7 +110,7 @@ monitoring-stack/
 │   ├── install_grafana.sh      # Installation script for Grafana
 │   └── setup_monitoring.sh     # Combined setup script
 └── LICENSE                     # License file (optional)
-Customization
+Customization 🎨
 Add Alerts
 Edit prometheus/alerts.yml to define alert rules.
 
@@ -116,7 +125,7 @@ Export Grafana dashboards as JSON files.
 
 Store them in grafana/dashboards/.
 
-Contributing
+Contributing 🤝
 Contributions are welcome! Please follow these steps:
 
 Fork the repository.
@@ -129,15 +138,14 @@ Push to the branch (git push origin feature/YourFeature).
 
 Open a pull request.
 
-License
+License 📜
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Acknowledgments
+Acknowledgments 🙏
 Prometheus
 
 Grafana
 
 Node Exporter
 
-Support
-For questions or issues, please open an issue on the GitHub repository.
+Support ❤️
