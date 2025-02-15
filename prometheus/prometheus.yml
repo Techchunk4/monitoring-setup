@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'node_exporter_prometheus'
+    static_configs:
+      - targets: ['your_ip:9100']  # Node Exporter on Prometheus server
+
+  - job_name: 'node_exporter_lamp'
+    static_configs:
+      - targets: ['your_ip:9100']  # Node Exporter on LAMP stack server
